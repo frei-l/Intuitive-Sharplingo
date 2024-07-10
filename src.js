@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Intuitive SharpLingo
 // @namespace    https://github.com/frei-l/Intuitive-Sharplingo
-// @version      0.1
+// @version      0.1.1
 // @description  改善sharplingo在PC端的体验
 // @author       freil
 // @match        https://sharplingo.cn/users/study
@@ -75,15 +75,13 @@
             event.preventDefault()
             event.stopPropagation()
             if(document.activeElement.tagName === 'INPUT'){
-                const submitButton = document.getElementById("first_try") || document.getElementById("second_try");
+                const submitButton = document.getElementById("first_try") || document.getElementById("second_try")
+                submitButton.click()
                 // whether the submit button is hidden
                 if(submitButton.className.includes("hidden")){
-                    // click next button
                     document.getElementById("next").click()
-                }else{
-                    // click submit button
-                    submitButton.click()
                 }
+                // const submissionFeedback = document.querySelector('.valid-feedback')
             }else if (document.activeElement.id === 'word-modal-study') {
                 // look up word
                 const closeModal = document.querySelector('#word-modal-study > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > button:nth-child(1)')
