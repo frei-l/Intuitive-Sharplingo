@@ -9,4 +9,4 @@
 ## 音频
 - ctrl-P    播放音频(play)
 ## 跳过
-- ctrl-space    永久跳过当前卡片
+- shift-space    永久跳过当前卡片
